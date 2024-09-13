@@ -1,0 +1,88 @@
+<div class="relative main-content h-screen py-16  bg-gray-50">
+  <div nz-row class="justify-center ">
+    <div nz-col nzXs="24" nzSm="18" nzMd="12" nzXl="8" nzXXl="6"
+         style="box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0; border-radius: 25px">
+
+      <div class="flex justify-center mt-2">
+        <img src="assets/images/logo/sm_logo.png" alt="logo" class="img-fluid">
+      </div>
+
+      <div class="rounded-6">
+        <div class="p-[20px] text-center">
+          <h2 class="text-2xl font-extrabold ">Login to PayAlexa Account</h2>
+          <div
+            class="relative mt-[5px] text-center text-13 text-regular dark:text-white/[87] before:content-[''] before:absolute before:w-full ltr:before:left-0 rtl:before:right-0 before:top-[50%] before:translate-y-[-50%] before:z-[1] before:h-[1px] before:bg-normal before:dark:bg-white/10">
+              <span
+                class="font-medium px-[15px] inline-block relative z-[2]  dark:bg-[#1b1c29] text-theme-gray dark:text-white/60 capitalize">Access your Alexapay account</span>
+          </div>
+
+        </div>
+        <div class="py-[20px] px-[40px] content">
+          <form nz-form [formGroup]="validateForm" nzLayout="vertical" class="login-form" (ngSubmit)="submitForm()">
+            <nz-form-item class="block mb-1">
+              <nz-form-label
+                class="text-[14px] w-full leading-[1.4285714286] font-medium [&>label]:text-dark [&>label]:dark:text-white/[.87] mb-[8px] capitalize inline-block"
+                nzRequired nzFor="userName">Username
+              </nz-form-label>
+              <nz-form-control nzErrorTip="Enter Your Username">
+                <input
+                  class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-2 border-regular dark:border-white/10 w-full text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0] dark:bg-white/10 dark:text-white/60"
+                  nz-input formControlName="userName" placeholder="Username or Email" id="userName"/>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item class="block mb-0 mt-[25px]">
+              <nz-form-label
+                class=" text-[14px] leading-[1.4285714286] font-medium [&>label]:text-dark [&>label]:dark:text-white/[.87] capitalize inline-block"
+                nzRequired nzFor="password">Password
+              </nz-form-label>
+              <nz-form-control nzErrorTip="Enter Your Password to identify You">
+                <nz-input-group
+                  class="flex items-center shadow-none py-[10px] px-[20px] h-[48px] border-2 border-regular dark:border-white/10  w-full text-[14px] font-normal leading-[1.5] dark:bg-white/10"
+                  [nzSuffix]="suffixTemplate">
+                  <input nz-input formControlName="password" [type]="passwordVisible ? 'text' : 'password'"
+                         id="password" placeholder="Password"
+                         class="placeholder:text-[#A0A0A0] dark:bg-transparent bg-transparent dark:text-white/60"/>
+                </nz-input-group>
+                <ng-template #suffixTemplate>
+                    <span class="[&>svg]:text-theme-gray dark:[&>svg]:text-white/60" nz-icon
+                          [nzType]="passwordVisible ? 'eye' : 'eye-invisible'"
+                          (click)="passwordVisible = !passwordVisible"></span>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+            <div class="flex items-center justify-between capitalize mb-[19px] mt-[23px] ">
+              <label nz-checkbox formControlName="remember"
+                     class="font-normal text-14 leading-[22px] text-light dark:text-white/60">
+                <span>I Accept terms & Conditions</span>
+              </label>
+              <a class="text-14 text-primary hover:text-dark dark:hover:text-white/[.87]"
+                 routerLink="/authentication/forget-pass">forget password?</a>
+            </div>
+            <button nz-button type="submit" title="Proceed Login"
+                    class=" inline-flex items-center justify-center mt-6 w-full h-[48px] text-18 rounded-3xl font-medium bg-primary-hbr text-white cursor-pointer hover:bg-primary border-primary transition duration-300">
+              <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+              Log in
+            </button>
+          </form>
+
+
+        </div>
+
+        <div
+          class="relative mb-[16px]  mx-6 text-center text-13 text-regular dark:text-white/[87] before:content-[''] before:absolute before:w-full ltr:before:left-0 rtl:before:right-0 before:top-[50%] before:translate-y-[-50%] before:z-[1] before:h-[1px] before:bg-normal before:dark:bg-white/10">
+              <span
+                class="font-medium px-[15px] inline-block relative z-[2]  dark:bg-[#1b1c29] text-theme-gray dark:text-white/60 capitalize">OR</span>
+        </div>
+        <div class="text-center mb-6 rounded mx-3 p-[12px] bg-deepBG">
+          <p
+            class="text-[16px] font-medium text-theme-gray dark:text-white/[.87] inline-flex items-center gap-[6px] mb-0">
+            Don`t have an account?<a
+            class="transition duration-300 text-[16px] text-primary hover:text-dark dark:hover:text-white/[.87]"
+            routerLink="/onboarding" title="Register New User Account instantly">Sign up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
