@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NzFormControlComponent, NzFormDirective, NzFormItemComponent, NzFormLabelComponent} from "ng-zorro-antd/form";
 import {NzColDirective, NzRowDirective} from "ng-zorro-antd/grid";
@@ -7,6 +7,7 @@ import {NzCheckboxComponent} from "ng-zorro-antd/checkbox";
 import {NzButtonComponent} from "ng-zorro-antd/button";
 import {RouterLink} from "@angular/router";
 import {NzOptionComponent, NzSelectComponent} from "ng-zorro-antd/select";
+import {NzDatePickerComponent} from "ng-zorro-antd/date-picker";
 
 @Component({
   selector: 'app-onboarding',
@@ -25,7 +26,8 @@ import {NzOptionComponent, NzSelectComponent} from "ng-zorro-antd/select";
     RouterLink,
     NzSelectComponent,
     NzOptionComponent,
-    FormsModule
+    FormsModule,
+    NzDatePickerComponent
   ],
   templateUrl: './onboarding.component.html',
   styleUrl: './onboarding.component.css'
@@ -34,6 +36,7 @@ export class OnboardingComponent {
 
   signUpForm!: FormGroup;
   error = false;
+  date = null;
 
   submitForm(): void {
     for (const i in this.signUpForm.controls) {
@@ -68,5 +71,8 @@ export class OnboardingComponent {
     });
   }
 
+  onChange(result: Date): void {
+    console.log('onChange: ', result);
+  }
 
 }
