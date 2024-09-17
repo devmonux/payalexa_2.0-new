@@ -13,6 +13,12 @@ export const COMMON_LAYOUT_ROUTES: Routes = [
     path: 'onboarding',
     loadComponent: () => import('../../../app/onboarding/onboarding.component').then(c => c.OnboardingComponent),
     title: 'Signup User Account'
+  },
+
+  {
+    path: 'authentication/forgot-password',
+    loadComponent: () => import('../../../app/authentication/forgot-password/forgot-password.component').then(c => c.ForgotPasswordComponent),
+    title: 'Forgot Password'
   }
 
 ]

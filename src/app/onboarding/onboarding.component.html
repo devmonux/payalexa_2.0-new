@@ -46,10 +46,10 @@
                 </nz-form-control>
               </nz-form-item>
 
-              <nz-form-item class="w-full border-1 rounded">
+              <nz-form-item class="w-full">
                 <nz-form-control nzErrorTip="Please Select Gender!">
-                  <nz-select formControlName="gender" id="gender" nzBorderless="true"
-                             class="flex items-center shadow-none w-full py-[10px] px-[20px] h-[40px] text-[14px] font-normal  placeholder:text-[#A0A0A0] dark:bg-white/10 dark:text-white/60"
+                  <nz-select formControlName="gender" id="gender" nzBorderless="false" nzSize="large" nzAutoFocus="false"
+                             class="flex items-center font-normal placeholder:text-[#A0A0A0] dark:bg-white/10 dark:text-white/60"
                              nzPlaceHolder="Select a person">
                     <nz-option nzLabel="Male" nzValue="Male"></nz-option>
                     <nz-option nzLabel="Female" nzValue="Female"></nz-option>
@@ -62,7 +62,7 @@
               <nz-form-item class="w-full">
                 <nz-form-control nzErrorTip="Please input your DOB!">
                   <nz-date-picker formControlName="dob"
-                                  class="flex  items-center shadow-none py-[10px] px-[20px] h-[40px] border-1 border-gray-200
+                                  class="flex items-center shadow-none py-[10px] px-[20px] h-[40px] border-1 border-gray-200
                    dark:border-white/10 rounded-4 text-[14px] font-normal leading-[1.5] placeholder:text-[#A0A0A0]
                    dark:bg-white/10 dark:text-white/60">
                   </nz-date-picker>

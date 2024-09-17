@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NzFormControlComponent, NzFormDirective, NzFormItemComponent, NzFormLabelComponent} from "ng-zorro-antd/form";
 import {NzColDirective, NzRowDirective} from "ng-zorro-antd/grid";
@@ -32,7 +32,7 @@ import {NzDatePickerComponent} from "ng-zorro-antd/date-picker";
   templateUrl: './onboarding.component.html',
   styleUrl: './onboarding.component.css'
 })
-export class OnboardingComponent {
+export class OnboardingComponent implements OnInit{
 
   signUpForm!: FormGroup;
   error = false;
